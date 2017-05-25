@@ -13,11 +13,11 @@ while True:
     tokens = user_input.split()
 
     # break loop if input is 'q'
-    if "q" in tokens:
+    if tokens[0][0].lower() == "q":
         print "This means you want to exit. Goodbye!"
         break
 
-    # check len(tokens) and turn input strings into floats
+
     if len(tokens) == 1 or len(tokens) == 0:
         print "Sorry, that's not enough characters. Please try again."
         
@@ -29,38 +29,27 @@ while True:
         else:
             print cube(num1)
 
-
     elif len(tokens) < 3:
         print "Sorry, that's not enough characters. Please try again."
 
-    elif len(tokens) >= 3:    
+    elif len(tokens) >= 3:   
+        num1 = float(tokens[1])
+        num2 = float(tokens[2]) 
     
         if tokens[0] == "+":
-            num1 = float(tokens[1])
-            num2 = float(tokens[2])
             print add(num1, num2)
 
         elif tokens[0] == "-":
-            num1 = float(tokens[1])
-            num2 = float(tokens[2])
             print subtract(num1, num2)
 
         elif tokens[0] == "*":
-            num1 = float(tokens[1])
-            num2 = float(tokens[2])
             print multiply(num1, num2)
 
         elif tokens[0] == "/":
-            num1 = float(tokens[1])
-            num2 = float(tokens[2])
             print divide(num1, num2)
 
         elif tokens[0] == "pow":
-            num1 = float(tokens[1])
-            num2 = float(tokens[2])
             print power(num1, num2)
 
         elif tokens[0] == "mod":
-            num1 = float(tokens[1])
-            num2 = float(tokens[2])
             print mod(num1, num2)
